@@ -19,11 +19,15 @@ class SiteController extends Controller
         // return response()->json(['success' => true, 'sites' => $sites]);
     }
 
+
     public function marker()
     {
+        $green = Site::where('color',"green")->count();
+        $orange = Site::where('color',"orange")->count();
+        $red = Site::where('color',"red")->count();
         $sites = Site::all();
         // dd("", $sites);
-        return view('dashboard', compact('sites')); // Pass markers to the view
+        return view('dashboard', compact('sites','green','red','orange')); // Pass markers to the view
         // $sites = Site::all(['id', 'latitude', 'longitude', 'color']); // Fetch only required columns
         // return response()->json(['success' => true, 'sites' => $sites]);
     }

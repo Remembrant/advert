@@ -23,6 +23,7 @@ Route::redirect("/","/sites")->name('dashboard');
 
 Route::middleware(["auth","verified"])->group(function () {
     Route::get('/sites', [SiteController::class, 'marker'])->name('site.marker');
+    // Route::get('/count', [SiteController::class, 'count'])->name('site.count');
     Route::get('/markers', [MarkerController::class, 'index']);
     // Route::put('/markers/{id}', [MarkerController::class, 'update']);
     // Route::get('/dashboard', [MarkerController::class, 'index']);

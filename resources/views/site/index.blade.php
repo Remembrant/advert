@@ -96,11 +96,11 @@
                 <td class="px-6 py-4">
                     
                     @if ($site->color == "red")
-                        <p class="text-red-600">{{ $site->color }}</p>
+                        <p class="text-red-600">Booked</p>
                     @elseif ($site->color == "orange")
-                        <p class="text-orange-600">{{ $site->color }}</p>
+                        <p class="text-orange-300">Pending</p>
                     @else
-                        <p class="text-green-600">{{ $site->color }}</p>
+                        <p class="text-green-600">Available</p>
                     @endif
                     
                 </td>
