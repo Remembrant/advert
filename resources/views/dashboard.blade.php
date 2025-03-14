@@ -42,7 +42,7 @@
             
 
                 <script>
-                    var map = L.map('map').setView([-25.7479, 28.2293], 10); // Center on Pretoria
+                    var map = L.map('map').setView([-26.2708, 28.1123], 8); // Center on Pretoria
                 
                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         attribution: '&copy; OpenStreetMap contributors'

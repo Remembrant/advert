@@ -82,7 +82,7 @@ class SiteController extends Controller
         ]);
         // $data['user_id'] = 1;
         $site->update($data);
-
+        // dd(''.$site);
         return to_route('site.marker', $site)->with('message','Site updated');
     }
 

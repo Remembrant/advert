@@ -34,10 +34,28 @@
             <!-- Page Content -->
             <main>
                 @session('message')
-                    <div class="success-message">{{session('message')}}</div>
+                    
+                    <div id="success-message" class="hidden max-w-lg mx-auto mt-4 bg-green-100 text-green-800 p-4 rounded-lg border border-green-400 shadow-lg">
+                        {{session('message')}}
+                    </div>
                 @endsession
                 {{ $slot }}
             </main>
         </div>
     </body>
+    <script>
+        // Function to show the success message
+        function showSuccessMessage() {
+            const message = document.getElementById("success-message");
+            message.classList.remove("hidden");
+    
+            // Hide after 3 seconds
+            setTimeout(() => {
+                message.classList.add("hidden");
+            }, 3000);
+        }
+    
+        // Call this function when needed
+        showSuccessMessage();
+    </script>
 </html>

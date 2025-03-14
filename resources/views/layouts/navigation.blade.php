@@ -28,11 +28,11 @@
                         {{ __('Site') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('client.index')" :active="request()->routeIs('client.*')">
                         {{ __('Client') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('support.index')" :active="request()->routeIs('support.*')">
                         {{ __('Support') }}
                     </x-nav-link>
                 </div>
