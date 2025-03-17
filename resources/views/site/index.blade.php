@@ -115,10 +115,11 @@
                                         {{ $site->lng}}
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{ $site->client}}
+                                        {{-- {{ $site->client->name}} --}}
+                                        {{ $site->client ? $site->client->name : 'Null' }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{ $site->contact}}
+                                        {{ $site->client ? $site->client->contact : 'Null' }}
                                     </td>
                                     <td class="px-6 py-4">
                                         <a href="{{route('site.edit', $site)}}" class="font-medium text-blue-600 hover:underline">Edit</a>

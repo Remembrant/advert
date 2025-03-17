@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Site;
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -13,6 +14,7 @@ class SiteController extends Controller
     public function index()
     {
         $sites = Site::all();
+
         // dd("", $sites);
         return view("site.index",["sites"=> $sites]);
         // $sites = Site::all(['id', 'latitude', 'longitude', 'color']); // Fetch only required columns
@@ -67,7 +69,9 @@ class SiteController extends Controller
      */
     public function edit(Site $site)
     {
-        return view("site.edit", ["site"=> $site]);
+        $sites = Site::all();
+        $clients = Client::all();
+        return view("site.edit", ["site"=> $site,"sites"=> $sites, "clients"=> $clients]);
     }
 
     /**
@@ -77,13 +81,14 @@ class SiteController extends Controller
     {
         $data = $request->validate([
             'color' => ['required','string'],
-            'client' => ['required','string'],
-            'contact' => ['required','string']
+            'client_id' => ['required','string']
+          
         ]);
+        // $sites = Site::all();
         // $data['user_id'] = 1;
         $site->update($data);
-        // dd(''.$site);
-        return to_route('site.marker', $site)->with('message','Site updated');
+        return to_route('site.index', $site)->with('message','Site updated');
+        
     }
 
     /**

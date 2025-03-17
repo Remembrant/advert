@@ -13,10 +13,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    
-    return view('index');
-});
 
 // Route::get('/dashboard', function () {
 //     Route::get('/dashboard', [MarkerController::class, 'index']);
@@ -30,7 +26,7 @@ Route::redirect("/dashboard","/sites")->name('dashboard');
 Route::middleware(["auth","verified"])->group(function () {
     Route::get('/sites', [SiteController::class, 'marker'])->name('site.marker');
     // Route::get('/count', [SiteController::class, 'count'])->name('site.count');
-    Route::get('/markers', [MarkerController::class, 'index']);
+    // Route::get('/markers', [MarkerController::class, 'index']);
     // Route::put('/markers/{id}', [MarkerController::class, 'update']);
     Route::get('/support', [SupportController::class, 'index'])->name('support.index');
     Route::resource("site", SiteController::class);

@@ -38,7 +38,7 @@
                 
                 <div id="map"></div>
                 
-                <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+                {{-- <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> --}}
             
 
                 <script>

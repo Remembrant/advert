@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('contact');
             $table->string('email');
-            $table->foreignId('site_id')->constrained('sites');
+            // $table->foreignId('site_id')->constrained('sites');
             $table->timestamps();
         });
     }
